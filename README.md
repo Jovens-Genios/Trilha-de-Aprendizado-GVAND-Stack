@@ -31,7 +31,7 @@ Esta trilha é inteiramente baseada em projetos. O que significa que não haver�
 
 Os projetos estão dentro da pasta /projetos neste repositório. Lembre-se de criar e publicar os seus projetos bem documentados no seu Github!
 
-### Materiais recomendados
+## Materiais recomendados
 
 * [Getting Started With GRANDstack](https://grandstack.io/docs/getting-started-neo4j-graphql)
 * [GRANDstack Resources](https://grandstack.io/docs/grandstack-resources)
