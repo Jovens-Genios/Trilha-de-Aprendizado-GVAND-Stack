@@ -33,5 +33,6 @@ Os projetos estão dentro da pasta /projetos neste repositório. Lembre-se de cr
 
 ## Materiais recomendados
 
+* [Introduction to GraphQL](https://graphql.org/learn/)
 * [Getting Started With GRANDstack](https://grandstack.io/docs/getting-started-neo4j-graphql)
 * [GRANDstack Resources](https://grandstack.io/docs/grandstack-resources)
