@@ -10,6 +10,9 @@ A sigla GRAND significa a junção de 4 tecnologias distintas para a criação d
 * **A**pollo: Ferramenta consistente para GraphQL no desenvolvimento do lado do servidor e do lado do cliente.
 * **N**eo4j **D**atabase: Modele, armazene e consulte seus dados da mesma maneira que você pensa sobre eles: como um grafo. É um banco de dados.
 
+A figura abaixo mostra um exemplo da GRAND stack aplicada em um sistema de busca de filmes:
+![GRAND stack](https://grandstack.io/assets/img/grandstack_architecture.png)
+
 Na GVAND stack, substituimos o componente React pelo Vue.js, para desenvolvermos nosso front-end.
 
 ## Habilidades desenvolvidas
