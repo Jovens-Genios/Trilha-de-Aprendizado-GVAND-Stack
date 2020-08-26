@@ -1,0 +1,121 @@
+type Genre {
+   _id: Long!
+   name: String!
+   movies: [Movie] @relation(name: "IN_GENRE", direction: IN)
+}
+
+type User {
+   _id: Long!
+   name: String!
+   userId: String!
+   rated: [Movie] @relation(name: "RATED", direction: OUT)
+   RATED_rel: [RATED]
+   recommendedMovies(limit: Int = 25): [Movie] @cypher (statement: """
+      MATCH (this)-[x:RATED]->(movie:Movie)
+      WITH this, algo.similarity.asVector(movie, x.rating) AS u1Vector
+      MATCH (u2:User)-[x2:RATED]->(movie:Movie) WHERE u2 <> this
+
+      WITH this, u2, u1Vector, algo.similarity.asVector(movie, x2.rating) AS u2Vector
+      WHERE size(apoc.coll.intersection([v in u1Vector | v.category], [v in u2Vector | v.category])) > 10
+
+      WITH this, u2,  algo.similarity.pearson(u1Vector, u2Vector, {vectorType: 'maps'}) AS similarity
+      ORDER BY similarity DESC
+      LIMIT 10
+
+      MATCH (u2)-[r:RATED]->(m:Movie) WHERE NOT EXISTS( (this)-[:RATED]->(m) )
+      with m, SUM( similarity * r.rating) AS score
+      RETURN m
+      ORDER BY score DESC LIMIT $limit
+   """)
+}
+
+type Person {
+   _id: Long!
+   bio: String
+   born: Date
+   bornIn: String
+   died: Date
+   imdbId: String
+   name: String!
+   poster: String
+   tmdbId: String!
+   url: String!
+   acted_in: [Movie] @relation(name: "ACTED_IN", direction: OUT)
+   directed: [Movie] @relation(name: "DIRECTED", direction: OUT)
+}
+
+type Actor {
+   _id: Long!
+   bio: String
+   born: Date
+   bornIn: String
+   died: Date
+   imdbId: String
+   name: String!
+   poster: String
+   tmdbId: String!
+   url: String!
+   acted_in: [Movie] @relation(name: "ACTED_IN", direction: OUT)
+   directed: [Movie] @relation(name: "DIRECTED", direction: OUT)
+}
+
+type Director {
+   _id: Long!
+   bio: String
+   born: Date
+   bornIn: String
+   died: Date
+   imdbId: String
+   name: String!
+   poster: String
+   tmdbId: String!
+   url: String!
+   acted_in: [Movie] @relation(name: "ACTED_IN", direction: OUT)
+   directed: [Movie] @relation(name: "DIRECTED", direction: OUT)
+}
+
+type Movie {
+   _id: Long!
+   budget: Int
+   countries: [String]
+   imdbId: String!
+   imdbRating: Float
+   imdbVotes: Int
+   languages: [String]
+   movieId: String!
+   plot: String
+   poster: String
+   released: String
+   revenue: Int
+   runtime: Int
+   title: String!
+   tmdbId: String
+   url: String
+   year: Int
+   in_genre: [Genre] @relation(name: "IN_GENRE", direction: OUT)
+   users_rated: [User] @relation(name: "RATED", direction: IN)
+   similarMovies(limit: Int = 10): [Movie] @cypher(statement: """
+    MATCH (this)-[:IN_GENRE|:ACTED_IN|:DIRECTED]-(t)<-[:IN_GENRE|:ACTED_IN|:DIRECTED]-(other:Movie)
+    WITH this, other, COUNT(t) AS intersection, COLLECT(t.name) AS i
+    MATCH (this)-[:IN_GENRE|:ACTED_IN|:DIRECTED]-(mt)
+    WITH this,other, intersection,i, COLLECT(mt.name) AS s1
+    MATCH (other)-[:IN_GENRE|:ACTED_IN|:DIRECTED]-(ot)
+    WITH this,other,intersection,i, s1, COLLECT(ot.name) AS s2
+
+    WITH this,other,intersection,s1,s2
+
+    WITH this,other,intersection,s1+filter(x IN s2 WHERE NOT x IN s1) AS union, s1, s2
+    with other, ((1.0*intersection)/SIZE(union)) AS jaccard
+
+    RETURN other
+    ORDER BY jaccard DESC LIMIT $limit
+   """)
+}
+
+
+type RATED @relation(name: "RATED") {
+  from: User!
+  to: Movie!
+  rating: Float!
+  timestamp: Int!
+}
