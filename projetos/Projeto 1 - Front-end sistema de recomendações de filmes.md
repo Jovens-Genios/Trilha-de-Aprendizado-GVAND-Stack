@@ -53,7 +53,7 @@ Para receber os filmes similares a determinado filme, você consegue acessar com
 ```
 query{
   Movie (title: "Toy Story"){
-		similarMovies{
+    similarMovies{
       title
     }
   }
