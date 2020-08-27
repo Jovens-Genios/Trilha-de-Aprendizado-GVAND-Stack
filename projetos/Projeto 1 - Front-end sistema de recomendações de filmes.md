@@ -22,7 +22,7 @@ Funcionalidades mínimas da plataforma:
 * Sistema recomenda filmes para o usuário baseado em seus ratings. 
 * Usuário pode navegar pelos filmes da plataforma, segmentados por gênero.
 * Usuário pode buscar filmes na plataforma usando um campo de busca.
-* Na página de detalhes de cada filmes, ter informações sobre aquele filme, além de mostrar filmes similares aquele.
+* Na página de detalhes de cada filme, ter informações sobre aquele filme, além de mostrar filmes similares aquele.
 
 ## Stack e requisitos técnicos
 
