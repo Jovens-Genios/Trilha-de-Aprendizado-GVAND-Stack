@@ -7,7 +7,7 @@ type Genre {
 type User {
    _id: Long!
    name: String!
-   userId: String!
+   userId: ID!
    rated: [Movie] @relation(name: "RATED", direction: OUT)
    RATED_rel: [RATED]
    recommendedMovies(limit: Int = 25): [Movie] @cypher (statement: """
@@ -82,7 +82,7 @@ type Movie {
    imdbRating: Float
    imdbVotes: Int
    languages: [String]
-   movieId: String!
+   movieId: ID!
    plot: String
    poster: String
    released: String
