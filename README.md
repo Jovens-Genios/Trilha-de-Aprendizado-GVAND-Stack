@@ -21,7 +21,7 @@ Durante esta trilha de aprendizado você mergulhará mais a fundo em cada uma de
 * Compreender os principais conceitos do GraphQL e seus benefícios.
 * Compreender os principais conceitos do Neo4j e seus benefícios.
 * Aplicar algoritmos de similaridade em grafos para recomendação.
-* Criar aplicações completas fullstack, com front-end, banco de dados e API utilizando a GRAND stack.
+* Criar aplicações completas fullstack, com front-end, banco de dados e API utilizando a GVAND stack.
 
 ## Como funciona a trilha
 
