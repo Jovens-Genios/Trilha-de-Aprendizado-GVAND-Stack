@@ -26,7 +26,7 @@ Funcionalidades mínimas da plataforma:
 
 ## Stack e requisitos técnicos
 
-Para este projeto é recomendado que você já saiba os fundamentos de [Vue.js](https://vuejs.org/), assim como já ter conhecimento das bibliotecas Vuetify e Vue Router, se você ainda não tem esses conhecimentos, veja a [Trilha de Aprendizado Vue.js](https://github.com/Jovens-Genios/Trilha-de-Aprendizado-Vue.js). 
+Para este projeto é recomendado que você já saiba os fundamentos de [Vue.js](https://vuejs.org/), assim como já ter conhecimento das bibliotecas Vuetify e Vue Router, se você ainda não tem esses conhecimentos, veja a [Trilha de Aprendizado Vue.js](https://github.com/Jovens-Genios/Trilha-de-Aprendizado-Vue.js). Assim como também é recomendado que você tenha entenda os [fundamentos do GraphQL](https://graphql.org/learn/).
 
 Neste projeto, você usará as seguintes tecnologias:
 * Vue.js: para a construção da lógica no front-end.
