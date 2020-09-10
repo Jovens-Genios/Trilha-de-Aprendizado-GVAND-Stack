@@ -36,7 +36,7 @@ Neste projeto, você usará as seguintes tecnologias:
 
 ## Como consumir dados da API GraphQL
 
-A [API GraphQL](https://trilha-gvand-stack-graphql-api.vercel.app/graphql) está disponível no link: https://trilha-gvand-stack-graphql-api.vercel.app/graphql. Por lá você encontrará um playground e documentação da API para poder entender melhor como interagir com os dados disponíveis. Você deve usar esse mesmo link nas configurações do Vue Apollo no front-end.
+A [API GraphQL](https://trilha-gvand-stack-graphql-api.costafernando.vercel.app/graphql) está disponível no link: https://trilha-gvand-stack-graphql-api.costafernando.vercel.app/graphql. Por lá você encontrará um playground e documentação da API para poder entender melhor como interagir com os dados disponíveis. Você deve usar esse mesmo link nas configurações do Vue Apollo no front-end.
 
 Para receber os filmes recomendados para determinado usuário, você consegue acessar como uma propriedade do objeto User da seguinte forma:
 ```
