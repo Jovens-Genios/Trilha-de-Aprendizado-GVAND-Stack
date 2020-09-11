@@ -36,7 +36,7 @@ Neste projeto, você usará as seguintes tecnologias:
 
 ## Como consumir dados da API GraphQL
 
-A [API GraphQL](https://trilha-gvand-stack-graphql-api.costafernando.vercel.app/graphql) está disponível no link: https://trilha-gvand-stack-graphql-api.costafernando.vercel.app/graphql. Por lá você encontrará um playground e documentação da API para poder entender melhor como interagir com os dados disponíveis. Você deve usar esse mesmo link nas configurações do Vue Apollo no front-end.
+A [API GraphQL](https://trilha-de-aprendizado-gvand.herokuapp.com/graphql) está disponível no link: https://trilha-de-aprendizado-gvand.herokuapp.com/graphql. Por lá você encontrará um playground e documentação da API para poder entender melhor como interagir com os dados disponíveis. Você deve usar esse mesmo link nas configurações do Vue Apollo no front-end.
 
 O grafo e estrutura dos dados está representado no diagrama abaixo:
 ![Grafo](http://guides.neo4j.com/sandbox/recommendations/img/datamodel.png)  
