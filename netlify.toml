@@ -1,0 +1,17 @@
+[build]
+  command = "cd solutions/graphql-api && npm i && npm run build && cp solutions/graphql-api/build/graphql-schema.js solutions/graphql-api/build/functions/graphql/. && cp solutions/graphql-api/build/schema.graphql solutions/graphql-api/build/functions/graphql/.  && cd solutions/graphql-api/src/functions/graphql"
+  publish = "solutions/graphql-api/build"
+  functions = "solutions/graphql-api/build/functions"
+
+[dev]
+  command = "npm start"
+
+[template.environment]
+  NEO4J_URI = "bolt://100.25.45.169:39438"
+  NEO4J_USER = "neo4j"
+  NEO4J_PASSWORD = "storm-stuffing-thresholds"
+  
+[[redirects]]
+  from = "/graphql"
+  to = "/.netlify/functions/graphql"
+  status = 200
