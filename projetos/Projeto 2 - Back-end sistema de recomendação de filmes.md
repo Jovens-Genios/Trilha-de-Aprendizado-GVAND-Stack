@@ -22,6 +22,7 @@ Funcionalidades mínimas da API:
 * CRUD de relacionamento entre User e Movie. Para salvar um rating que o usuário deu para determinado filme.
 * Filmes similares a determinado filme, usando Content-Based Filtering.
 * Recomendação de filmes para determinado usuário, usando Collaboritive Filtering.
+* Implementar uma query com [full-text search e fuzzy match](https://grandstack.io/docs/graphql-custom-logic/#custom-top-level-query-fields) para encontrar filmes baseado na busca escrita do usuário.
 
 ## Stack e requisitos técnicos
 
