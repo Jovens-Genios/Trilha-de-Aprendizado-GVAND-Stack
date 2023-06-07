@@ -36,16 +36,22 @@ const schema = makeAugmentedSchema({
  * using credentials specified as environment variables
  * with fallback to defaults
  */
+
 const driver = neo4j.driver(
-  process.env.NEO4J_URI || 'bolt://localhost:7687',
+  process.env.NEO4J_URI || "bolt://localhost:7687",
   neo4j.auth.basic(
-    process.env.NEO4J_USER || 'neo4j',
-    process.env.NEO4J_PASSWORD || 'neo4j'
+    process.env.NEO4J_USER || "neo4j",
+    process.env.NEO4J_PASSWORD || "neo4j"
   ),
   {
-    encrypted: process.env.NEO4J_ENCRYPTED ? 'ENCRYPTION_ON' : 'ENCRYPTION_OFF',
+    encrypted: "ENCRYPTION_ON",
+    maxConnectionLifetime: 8 * 60 * 1000,
+    maxConnectionPoolSize: 50,
+    connectionTimeout: 30000,
+    connectionAcquisitionTimeout: 2 * 60 * 1000,
+    disableLosslessIntegers: true,
   }
-)
+);
 
 /*
  * Perform any database initialization steps such as
