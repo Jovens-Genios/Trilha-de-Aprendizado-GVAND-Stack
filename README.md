@@ -6,12 +6,9 @@ A stack GVAND é uma ramificação da GRAND stack. Então, antes de mais nada, d
 
 A sigla GRAND significa a junção de 4 tecnologias distintas para a criação de aplicações com paradigma em grafos:
 * **G**raphQL: Use GraphQL para modelar e consultar os dados da sua aplicação como um grafo. É um paradigma para a construção de APIs.
-* **R**eact: Crie componentes de interface do usuário reutilizáveis e combináveis. É um framework front-end Javascript.
+* **V**ue: Crie componentes de interface do usuário reutilizáveis e combináveis. É um framework front-end Javascript.
 * **A**pollo: Ferramenta consistente para GraphQL no desenvolvimento do lado do servidor e do lado do cliente.
 * **N**eo4j **D**atabase: Modele, armazene e consulte seus dados da mesma maneira que você pensa sobre eles: como um grafo. É um banco de dados.
-
-A figura abaixo mostra um exemplo da GRAND stack aplicada em um sistema de busca de filmes:
-![GRAND stack](https://grandstack.io/assets/img/grandstack_architecture.png)
 
 Na GVAND stack, substituimos o componente React pelo Vue.js, para desenvolvermos nosso front-end.
 
@@ -30,9 +27,3 @@ Esta trilha é inteiramente baseada em projetos. O que significa que não haver�
 ## Como acessar os projetos
 
 Os projetos estão dentro da pasta /projetos neste repositório. Lembre-se de criar e publicar os seus projetos bem documentados no seu Github!
-
-## Materiais recomendados
-
-* [Introduction to GraphQL](https://graphql.org/learn/)
-* [Getting Started With GRANDstack](https://grandstack.io/docs/getting-started-neo4j-graphql)
-* [GRANDstack Resources](https://grandstack.io/docs/grandstack-resources)
